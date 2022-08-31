@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 {% if request.user.is_authenticated%}
 <p>{{request.user}}</p>
-<a href="{% url 'logout' %}">Logout</a>
+<a href="{% url 'logout' %}">Delogare</a>
 {% else %}
-<a href="{% url 'login' %}">Login</a>
+<a href="{% url 'login' %}">Logare</a>
 {% endif %}
 
 <h1>Lista de sarcini</h1>
