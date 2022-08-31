@@ -4,10 +4,14 @@
 <table>
     <tr>
         <th>Item</th>
+        <th></th>
+        <th></th>
     </tr>
     {% for sarcina in sarcini %}
     <tr>
         <td>{{sarcina.titlu}}</td>
+        <td><a href="{% url 'editeaza-sarcina' sarcina.id %}">Editeaza</a></td>
+        <td><a href="{% url 'sarcina' sarcina.id %}">Vizualizeaza</a></td>
     </tr>
     {% empty %}
     <h3>Nu exista sarcini</h3>
