@@ -6,6 +6,8 @@ from django.contrib.auth.views import LoginView
 
 from django.urls import reverse_lazy
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 from .models import Sarcini
 
 
@@ -19,26 +21,26 @@ class LogareView(LoginView):
     def get_success_url(self):
         return reverse_lazy('sarcini')
 
-class ListaSarcini(ListView):
+class ListaSarcini(LoginRequiredMixin, ListView):
     model= Sarcini
     context_object_name = 'sarcini'
 
-class CreazaSarcina(CreateView):
+class CreazaSarcina(LoginRequiredMixin, CreateView):
     model = Sarcini
     fields = '__all__'
     success_url = reverse_lazy('sarcini')
 
-class DetaliiSarcina(DetailView):
+class DetaliiSarcina(LoginRequiredMixin, DetailView):
     model = Sarcini
     context_object_name = 'sarcina'
     template_name = 'acasa/sarcina.html'
 
-class EditeazaSarcina(UpdateView):
+class EditeazaSarcina(LoginRequiredMixin, UpdateView):
     model = Sarcini
     fields = '__all__'
     success_url = reverse_lazy('sarcini')
 
-class StergeSarcina(DeleteView):
+class StergeSarcina(LoginRequiredMixin, DeleteView):
     model = Sarcini
     context_object_name = 'sarcini'
     success_url = reverse_lazy('sarcini')
