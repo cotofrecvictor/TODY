@@ -12,6 +12,7 @@
         <td>{{sarcina.titlu}}</td>
         <td><a href="{% url 'editeaza-sarcina' sarcina.id %}">Editeaza</a></td>
         <td><a href="{% url 'sarcina' sarcina.id %}">Vizualizeaza</a></td>
+        <td><a href="{% url 'sterge-sarcina' sarcina.id %}">Sterge</a></td>
     </tr>
     {% empty %}
     <h3>Nu exista sarcini</h3>

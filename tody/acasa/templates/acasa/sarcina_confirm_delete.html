@@ -1,0 +1,6 @@
+<a href="{% url 'sarcini' %"></a>
+<form method="POST">
+    {% csrf_token %}
+    <p>Esti sigur ca vrei sa stergi aceasta sarcina? "{{sarcina}}"</p>
+    <input type="Submit" value="Sterge"/>
+</form>
