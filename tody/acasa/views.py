@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic.list import ListView
+from .models import Sarcini
+
 # Create your views here.
 
-def ListaSarcini(request):
-    return HttpResponse('hello world')
+class ListaSarcini(ListView):
+    model= Sarcini
