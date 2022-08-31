@@ -25,6 +25,11 @@ class ListaSarcini(LoginRequiredMixin, ListView):
     model= Sarcini
     context_object_name = 'sarcini'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['sarcini'] = context['sarcini'].filter(utilizator=self.request.user)
+        return context
+
 class CreazaSarcina(LoginRequiredMixin, CreateView):
     model = Sarcini
     fields = '__all__'
