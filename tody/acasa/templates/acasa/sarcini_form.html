@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <h3>Creaza sarcina</h3>
-
+<a href="{% url 'sarcini' %}">Intoarcete</a>
 <form method="POST" action="">
     {%csrf_token%}
     {{form.as_p}}
