@@ -6,3 +6,4 @@ from .models import Sarcini
 
 class ListaSarcini(ListView):
     model= Sarcini
+    context_object_name = 'sarcini'

@@ -1,2 +1,16 @@
 <!DOCTYPE html>
 <h1>Lista de sarcini</h1>
+
+<table>
+    <tr>
+        <th>Item</th>
+    </tr>
+    {% for sarcina in sarcini %}
+    <tr>
+        <td>{{sarcina.titlu}}</td>
+    </tr>
+    {% empty %}
+    <h3>Nu exista sarcini</h3>
+    {% endfor %}
+
+</table>
