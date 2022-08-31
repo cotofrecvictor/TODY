@@ -1,7 +1,8 @@
 from django.urls import path 
-from .views import CreazaSarcina, DetaliiSarcina, ListaSarcini,EditeazaSarcina, StergeSarcina
+from .views import CreazaSarcina, DetaliiSarcina, ListaSarcini,EditeazaSarcina, StergeSarcina, LogareView
 
 urlpatterns = [
+    path('login/', LogareView.as_view(), name = 'login'),
     path('', ListaSarcini.as_view(), name = 'sarcini'),
     path('creaza-sarcina/', CreazaSarcina.as_view(), name = 'creaza-sarcina'),
     path('sarcina/<int:pk>/', DetaliiSarcina.as_view(), name = 'sarcina'),
