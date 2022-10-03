@@ -1,9 +1,16 @@
-<!DOCTYPE html>
+{% extends 'acasa/main.html' %}
 
-<h3>Creaza sarcina</h3>
-<a href="{% url 'sarcini' %}">Intoarce-te</a>
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'sarcini' %}">&#8592; Intoarce-te</a>
+</div>
+
+
 <form method="POST" action="">
     {%csrf_token%}
     {{form.as_p}}
     <input type="submit" value="Submit">
 </form>
+
+{% endblock %}

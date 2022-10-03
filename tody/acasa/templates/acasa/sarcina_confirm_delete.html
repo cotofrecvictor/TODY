@@ -1,7 +1,15 @@
+{% extends 'acasa/main.html' %}
+
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'sarcini' %}">&#8592; Intoarce-te</a>
+</div>
 <a href="{% url 'sarcini' %"></a>
-<a href="{% url 'sarcini' %}">Intoarce-te</a>
 <form method="POST">
     {% csrf_token %}
-    <p>Esti sigur ca vrei sa stergi aceasta sarcina? "{{sarcina}}"</p>
+    <p>Esti sigur ca vrei sa stergi aceasta sarcina? "{{sarcini}}"</p>
     <input type="Submit" value="Sterge"/>
 </form>
+
+{% endblock %}
