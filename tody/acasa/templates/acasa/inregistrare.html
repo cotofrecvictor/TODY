@@ -1,10 +1,27 @@
-<h1>Inregistreaza-te</h1>
+{% extends 'acasa/main.html' %}
 
+{% block content %}
+
+<div class="header-bar">
+<h1>Inregistreaza-te</h1>
+</div>
+<div class="card-body">
 <form method="POST">
     {% csrf_token %}
-    {{form.as_p}}
+    <label>{{form.username.label}}
+    {{form.username}}
+    </label>
+
+    <label>{{form.password1.label}}
+    {{form.password1}}
+    </label>
+
+    <label>{{form.password2.label}}
+    {{form.password2}}
+    </label>
     <input type="submit" value="Register">
 </form>
 
-
-<p>Ai deja un cont? <a href="">Logare</a></p>
+<p>Ai deja un cont? <a href="{% url 'login' %}">Logare</a></p>
+</div>
+{% endblock %}
