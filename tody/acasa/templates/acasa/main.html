@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tody</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: bisque;
+            font-family:'Playfair Display', serif;
+            padding-top: 20px;
+        }
+
+        .container{
+            max-width: 750px;
+            margin: auto;
+            background-color: beige;
+        }
+
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            color:beige;
+            padding: 10px;
+            border-radius: 4px 4px 0 0;
+            background-color:lightsalmon
+        }
+
+        .header-bar a {
+            color: rgb(245, 245, 245);
+            text-decoration: none;
+        }
+
+        .sarcina-wrapper {
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background-color:beige;
+            border-top: 3px solid rgb(226, 226, 226);
+        }
+
+        .sterge-link {
+            text-decoration: none;
+            font-weight: 900;
+            color: #cf4949;
+            font-size: 20px;
+            line-height: 0;
+        }
+        .sarcina-incompletat-icon{
+            height: 20px;
+            width: 20px;
+            background-color:rgb(218, 218, 218);
+            border-radius:50%;
+        }
+        .sarcina-completat-icon{
+            height:20px;
+            width:20px;
+            background-color: rgb(105, 192, 105);
+            border-radius:50%;
+        }
+
+        .sarcina-titlu a {
+            text-decoration: none;
+            color: #4b5156;
+            margin-left: 10px;
+        }
+        #adauga-link {
+            color:tomato;
+            text-decoration: none;
+            font-size:40px;
+            text-shadow: 1px 1px #81413b;
+        }
+
+        .sarcina-titlu {
+            display: flex;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+</body>
+</html>
