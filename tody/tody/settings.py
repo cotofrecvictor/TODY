@@ -38,7 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'acasa.apps.AcasaConfig',
+    'django_extensions',
 ]
+
+GRAPH_MODELS = {
+  'acasa': True,
+  'group_models': True,
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
