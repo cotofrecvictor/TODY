@@ -1,28 +1,42 @@
-<!DOCTYPE html>
+{% extends 'acasa/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <div>
+        <h1>Hello {{request.user|title}}</h1>
+    </div>
 {% if request.user.is_authenticated%}
-<p>{{request.user}}</p>
+
 <a href="{% url 'logout' %}">Delogare</a>
 {% else %}
 <a href="{% url 'login' %}">Logare</a>
 {% endif %}
+</div>
 
 <h1>Lista de sarcini</h1>
-<a href="{% url 'creaza-sarcina' %}">Adauga sarcina</a>
-<table>
-    <tr>
-        <th>Item</th>
-        <th></th>
-        <th></th>
-    </tr>
+<a id="adauga-link" href="{% url 'creaza-sarcina' %}">&#x2b;</a>
+
+<div class="sarcina-items-wrapper">
     {% for sarcina in sarcini %}
-    <tr>
-        <td>{{sarcina.titlu}}</td>
-        <td><a href="{% url 'editeaza-sarcina' sarcina.id %}">Editeaza</a></td>
-        <td><a href="{% url 'sarcina' sarcina.id %}">Vizualizeaza</a></td>
-        <td><a href="{% url 'sterge-sarcina' sarcina.id %}">Sterge</a></td>
-    </tr>
+        <div class="sarcina-wrapper">
+            {% if sarcina.completat %}
+                <div class="sarcina-titlu">
+                    <div class="sarcina-completat-icon"></div>
+                    <i><s><a href="{% url 'editeaza-sarcina' sarcina.id %}">{{sarcina}}</a></s></i>
+                </div>
+            {% else %}
+            <div class="sarcina-titlu">
+                <div class="sarcina-incompletat-icon"></div>
+                <a href="{% url 'editeaza-sarcina' sarcina.id %}">{{sarcina}}</a>
+            </div>
+                {% endif %}
+                <a class="sterge-link" href="{% url 'sterge-sarcina' sarcina.id %}">&#215;</a>
+
+        </div>
     {% empty %}
     <h3>Nu exista sarcini</h3>
     {% endfor %}
+</div>
 
-</table>
+{% endblock content %}
+
